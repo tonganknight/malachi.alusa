@@ -41,7 +41,7 @@ export const NavMenu = () => {
         </svg>
       </button>
       {open && (
-        <ul className="menu menu-sm fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 rounded-box z-50 w-52 p-2 shadow bg-foreground border-1 border-border-primary">
+        <ul className="menu menu-sm fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 rounded-box z-50 w-52 p-2 shadow bg-foreground border-1 border-edge-primary">
           <li>
             <a className="">Homepage</a>
           </li>

@@ -4,17 +4,22 @@
   --background: #0b1326;
   --foreground: #121a2d;
   --primary: #cec0fe;
-  --border-primary: #293144;
+  --edge-primary: #293144;
+  --secondary: #dbe1fc;
+  --highlight-primary: #4cd7ea;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-: var(--border-primary);
+  --color-secondary: var(--secondary);
+  --color-edge-primary: var(--edge-primary);
+  --color-highlight-primary: var(--highlight-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-headline: var(--font-montserrat);
+  --font-label: var(--font-geist);
 }
 
 html,
