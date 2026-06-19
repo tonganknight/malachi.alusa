@@ -7,6 +7,7 @@
   --edge-primary: #293144;
   --secondary: #dbe1fc;
   --highlight-primary: #4cd7ea;
+  --button-primary: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --color-secondary: var(--secondary);
   --color-edge-primary: var(--edge-primary);
   --color-highlight-primary: var(--highlight-primary);
+  --color-button-primary: var(--button-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-headline: var(--font-montserrat);

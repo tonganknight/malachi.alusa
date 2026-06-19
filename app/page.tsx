@@ -1,5 +1,6 @@
 import { HomeHeading } from "./components/HomeHeading";
 import { HomeSynopsis } from "./components/HomeSynopsis/HomeSynopsis";
+import { LetsConnectButton } from "./components/LetsConnectButton/LetsConnectButton";
 import { NavBar } from "./components/NavBar";
 
 export default function HomePage() {
@@ -8,6 +9,7 @@ export default function HomePage() {
       <NavBar />
       <HomeHeading />
       <HomeSynopsis />
+      <LetsConnectButton />
     </div>
   );
 }
