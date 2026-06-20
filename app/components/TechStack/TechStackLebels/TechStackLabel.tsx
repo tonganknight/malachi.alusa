@@ -6,7 +6,7 @@ interface TechStackLabelProps {
 
 export const TechStackLabel = ({ label, strobe }: TechStackLabelProps) => {
   return (
-    <div className="flex flex-row bg-foreground border-[1px] border-edge-primary items-center rounded-2xl m-3 p-1 w-[50%]">
+    <div className="flex flex-row bg-foreground border-[1px] border-edge-primary items-center rounded-2xl mb-3 p-1 w-[50%]">
       <ButtonStrobe glowClassName={strobe} />
       <p className="text-lg font-label font-bold text-highlight-primary">
         {label}

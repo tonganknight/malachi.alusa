@@ -1,3 +1,4 @@
+import { FeaturedProjectsSection } from "./components/FeaturedProjectsSection/FeaturedProjectsSection";
 import { HomeHeading } from "./components/HomeHeading";
 import { HomeSynopsis } from "./components/HomeSynopsis/HomeSynopsis";
 import { LetsConnectButton } from "./components/LetsConnectButton/LetsConnectButton";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <LetsConnectButton />
       <SkillsOverview />
       <TechStack />
+      <FeaturedProjectsSection />
     </div>
   );
 }
