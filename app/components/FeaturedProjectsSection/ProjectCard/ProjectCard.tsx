@@ -1,7 +1,7 @@
 import Image from "next/image";
 export const ProjectCard = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-center">
+    <div className="flex flex-col justify-center items-center text-center mb-3">
       <Image
         src="/TestRide.png"
         alt="Image of Test Ride testing App"
@@ -15,7 +15,11 @@ export const ProjectCard = () => {
           UI tests for HTML elements, and executes them. This automats basic
           testing for Websites.
         </p>
-        <a href="#" className="text-highlight-primary self-end">
+
+        <a
+          href="#"
+          className="text-highlight-primary text-[15px] self-end mt-3"
+        >
           View
         </a>
       </div>

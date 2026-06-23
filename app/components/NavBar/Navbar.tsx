@@ -3,7 +3,7 @@ import { NavMenu } from "../NavMenu/NavMenu";
 
 export const NavBar = () => {
   return (
-    <nav className="bg-background ">
+    <nav className="bg-background sticky top-0 z-50">
       <div className="p-6 text-primary font-headline text-[18px] font-extrabold uppercase border-b-[1px] border-edge-primary flex flex-row justify-between items-center">
         {NavItem.DevName}
         <NavMenu />
