@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { useGlobalController } from "@/app/context/GlobalController";
 import { FeaturedProjectsSection } from "../FeaturedProjectsSection/FeaturedProjectsSection";
 import { HomeHeading } from "../HomeHeading";
@@ -12,6 +13,14 @@ import { HomeSynopsisEnum } from "@/app/types/HomeSynopsis";
 
 export const Home = () => {
   const { showContactMe, setShowContactMe } = useGlobalController();
+
+  useEffect(() => {
+    if (!showContactMe) {
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [showContactMe]);
 
   return (
     <div className="flex min-h-screen min-w-0 flex-col">

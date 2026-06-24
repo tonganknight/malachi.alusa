@@ -1,4 +1,5 @@
 import { ButtonStrobe } from "./ButtonStrobe/ButtonStrobe";
+
 interface TechStackLabelProps {
   label: string;
   strobe: string;

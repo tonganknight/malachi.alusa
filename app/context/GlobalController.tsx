@@ -11,7 +11,11 @@ import {
 
 interface GlobalState {
   showContactMe: boolean;
+  showModal: boolean;
+  showFeature: boolean;
   setShowContactMe: Dispatch<SetStateAction<boolean>>;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
+  setShowFeature: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalControllerContext = createContext<GlobalState | undefined>(
@@ -24,10 +28,19 @@ export const GlobalControllerProvider = ({
   children: ReactNode;
 }) => {
   const [showContactMe, setShowContactMe] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showFeature, setShowFeature] = useState(false);
 
   return (
     <GlobalControllerContext.Provider
-      value={{ showContactMe, setShowContactMe }}
+      value={{
+        showContactMe,
+        setShowContactMe,
+        showModal,
+        setShowModal,
+        showFeature,
+        setShowFeature,
+      }}
     >
       {children}
     </GlobalControllerContext.Provider>

@@ -1,7 +1,20 @@
+"use client";
+
 import { FeaturedProjectSectionEnum } from "@/app/types/FeaturedProjectSectionEnum";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
+import { useState } from "react";
 
 export const FeaturedProjectsSection = () => {
+  const [showFeature, setShowFeature] = useState(false);
+
+  const tagsToDisplay = [
+    "Next.js",
+    ".Net",
+    "Playwright",
+    "TypeScript",
+    "TailwindCSS",
+    "Node.js",
+  ];
   return (
     <div className="flex flex-col ml-3">
       <div className="flex flex row justify-between items-center">
@@ -12,7 +25,14 @@ export const FeaturedProjectsSection = () => {
           {FeaturedProjectSectionEnum.ShowAllLink}
         </a>
       </div>
-      <ProjectCard />
+      <ProjectCard
+        showFeature={showFeature}
+        setShowFeature={setShowFeature}
+        synopsis={FeaturedProjectSectionEnum.FeaturedProjectSynopsis}
+        tags={tagsToDisplay}
+        link={FeaturedProjectSectionEnum.FeaturedProjectLink}
+        featurePoints={FeaturedProjectSectionEnum.FeaturedProjectFeaturePoints}
+      />
     </div>
   );
 };
