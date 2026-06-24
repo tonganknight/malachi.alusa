@@ -25,32 +25,34 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-center mb-3">
-      <Image
-        src="/TestRide.png"
-        alt="Image of Test Ride testing App"
-        width={260}
-        height={200}
-        className="rounded-2xl border-l-[1px] border-r-[1px] border-t-[1px] border-edge-primary"
-      />
-      <div className=" flex flex-col bg-foreground border-edge-primary border-b-[1px] border-l-[1px] border-r-[1px] rounded-b-2xl justify-center w-[84%] mt-[-10] p-[12px]">
-        <p className=" text-secondary text-[15px] break-words">
-          Test Ride is automated playwright test writing application. That
-          builds UI tests for HTML elements, and executes them. This automats
-          basic testing for Websites.
-        </p>
-        <div className="flex flex-wrap flex-row justify-center mt-3">
-          {tags?.map((tag, index) => (
-            <Tag key={index} text={tag} />
-          ))}
-        </div>
+    <div className="mb-3 flex flex-col items-center text-center">
+      <div className="flex w-full max-w-[260px] flex-col items-stretch">
+        <Image
+          src="/TestRide.png"
+          alt="Image of Test Ride testing App"
+          width={260}
+          height={200}
+          className="w-full rounded-2xl border-l-[1px] border-r-[1px] border-t-[1px] border-edge-primary"
+        />
+        <div className="-mt-[10px] flex w-full flex-col justify-center rounded-b-2xl border-b-[1px] border-l-[1px] border-r-[1px] border-edge-primary bg-foreground p-[12px]">
+          <p className="text-[15px] break-words text-secondary">
+            Test Ride is automated playwright test writing application. That
+            builds UI tests for HTML elements, and executes them. This automats
+            basic testing for Websites.
+          </p>
+          <div className="mt-3 flex flex-wrap flex-row justify-center">
+            {tags?.map((tag, index) => (
+              <Tag key={index} text={tag} />
+            ))}
+          </div>
 
-        <button
-          onClick={handleModalOpen}
-          className="text-highlight-primary text-[15px] self-end mt-3"
-        >
-          View
-        </button>
+          <button
+            onClick={handleModalOpen}
+            className="mt-3 self-end text-[15px] text-highlight-primary"
+          >
+            View
+          </button>
+        </div>
       </div>
       {showFeature ? (
         <Modal
