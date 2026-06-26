@@ -62,8 +62,8 @@ export const TechStack = () => {
       {showSqlModal && (
         <Modal
           Header={"SQL"}
-          ImageSrc={"/SQL.png"}
-          ImageAlt={"SQL"}
+          ImageSrc={"/sql.png"}
+          ImageAlt={"Image SQL"}
           showModal={showSqlModal}
           setShowModal={setShowSqlModal}
           synopsis={TechStackEnum.SQLModalContent}

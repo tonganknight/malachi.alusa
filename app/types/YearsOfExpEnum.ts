@@ -1,4 +1,4 @@
-export enum YearsOfExpEEnum {
+export enum YearsOfExpEnum {
   Label = "Years EXP",
-  Value = "05+",
+  Value = "5+",
 }
