@@ -1,10 +1,12 @@
 "use client";
 
+import { useGlobalController } from "@/app/context/GlobalController";
 import { useEffect, useRef, useState } from "react";
 
 export const NavMenu = () => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const { setShowContactMe } = useGlobalController();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -15,6 +17,10 @@ export const NavMenu = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const onLinkClick = () => {
+    setOpen(false);
+  };
 
   return (
     <div ref={ref} className="relative">
@@ -43,13 +49,23 @@ export const NavMenu = () => {
       {open && (
         <ul className="menu menu-sm fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 rounded-box z-50 w-52 p-2 shadow bg-foreground border-1 border-edge-primary">
           <li>
-            <a className="">Homepage</a>
+            <a
+              onClick={() => {
+                onLinkClick();
+                setShowContactMe(true);
+              }}
+              className=""
+            >
+              Contact Me
+            </a>
           </li>
           <li>
-            <a>Portfolio</a>
+            <a href="#TechStack" onClick={onLinkClick}>
+              Tech Stack
+            </a>
           </li>
           <li>
-            <a>About</a>
+            <a onClick={onLinkClick}>Projects</a>
           </li>
         </ul>
       )}
