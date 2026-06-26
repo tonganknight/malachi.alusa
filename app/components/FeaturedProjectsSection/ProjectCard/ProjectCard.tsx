@@ -26,12 +26,12 @@ export const ProjectCard = ({
 
   return (
     <div className="mb-3 flex flex-col items-center text-center">
-      <div className="flex w-full max-w-[260px] flex-col items-stretch">
+      <div className="flex w-full max-w-[300px] flex-col items-stretch mr-3">
         <Image
           src="/TestRide.png"
           alt="Image of Test Ride testing App"
-          width={260}
-          height={200}
+          width={300}
+          height={250}
           className="w-full rounded-2xl border-l-[1px] border-r-[1px] border-t-[1px] border-edge-primary"
         />
         <div className="-mt-[10px] flex w-full flex-col justify-center rounded-b-2xl border-b-[1px] border-l-[1px] border-r-[1px] border-edge-primary bg-foreground p-[12px]">

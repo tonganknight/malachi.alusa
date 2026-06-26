@@ -12,6 +12,7 @@ interface ModalProps {
   points?: string[];
   imageWidth?: number;
   imageHeight?: number;
+  demo?: boolean;
 }
 
 export const Modal = ({
@@ -26,6 +27,7 @@ export const Modal = ({
   setShowModal,
   imageWidth,
   imageHeight,
+  demo,
 }: ModalProps) => {
   const handleCloseModal = () => {
     setShowModal(false);
@@ -50,8 +52,8 @@ export const Modal = ({
         <Image
           src={ImageSrc}
           alt={ImageAlt}
-          width={imageWidth ?? 200}
-          height={imageHeight ?? 200}
+          width={imageWidth ?? 300}
+          height={imageHeight ?? 3200}
           className="rounded-2xl border-[1px] border-edge-primary"
         />
         <p className="my-3">{synopsis}</p>
@@ -72,18 +74,20 @@ export const Modal = ({
             </ul>
           </div>
         ) : null}
-        <a
-          href={link ?? "#"}
-          className=" flex flex-row items-center text-highlight-primary font-bold text-[15px] self-end mt-3"
-        >
-          Demo
-          <Image
-            src="/rightBlueArrowpng.png"
-            alt="Github Logo"
-            width={30}
-            height={30}
-          />
-        </a>
+        {demo ? (
+          <a
+            href={link ?? "#"}
+            className=" flex flex-row items-center text-highlight-primary font-bold text-[15px] self-end mt-3"
+          >
+            Demo
+            <Image
+              src="/rightBlueArrowpng.png"
+              alt="Github Logo"
+              width={30}
+              height={30}
+            />
+          </a>
+        ) : null}
       </div>
     </dialog>
   );
