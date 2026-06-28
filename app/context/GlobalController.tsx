@@ -13,9 +13,11 @@ interface GlobalState {
   showContactMe: boolean;
   showModal: boolean;
   showFeature: boolean;
+  showProjects: boolean;
   setShowContactMe: Dispatch<SetStateAction<boolean>>;
   setShowModal: Dispatch<SetStateAction<boolean>>;
   setShowFeature: Dispatch<SetStateAction<boolean>>;
+  setShowProjects: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalControllerContext = createContext<GlobalState | undefined>(
@@ -30,7 +32,7 @@ export const GlobalControllerProvider = ({
   const [showContactMe, setShowContactMe] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showFeature, setShowFeature] = useState(false);
-
+  const [showProjects, setShowProjects] = useState(false);
   return (
     <GlobalControllerContext.Provider
       value={{
@@ -40,6 +42,8 @@ export const GlobalControllerProvider = ({
         setShowModal,
         showFeature,
         setShowFeature,
+        showProjects,
+        setShowProjects,
       }}
     >
       {children}

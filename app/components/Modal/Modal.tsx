@@ -19,12 +19,11 @@ export const Modal = ({
   Header,
   ImageSrc,
   ImageAlt,
-  synopsis,
-  techStack,
-  link,
-  points,
   showModal,
   setShowModal,
+  synopsis,
+  link,
+  points,
   imageWidth,
   imageHeight,
   demo,
@@ -53,7 +52,7 @@ export const Modal = ({
           src={ImageSrc}
           alt={ImageAlt}
           width={imageWidth ?? 300}
-          height={imageHeight ?? 3200}
+          height={imageHeight ?? 300}
           className="rounded-2xl border-[1px] border-edge-primary"
         />
         <p className="my-3">{synopsis}</p>

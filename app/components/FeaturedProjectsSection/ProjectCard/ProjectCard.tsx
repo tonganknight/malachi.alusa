@@ -1,38 +1,55 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import { Modal } from "../../Modal/Modal";
 import { Tag } from "../../Tags/tags";
 
 interface ProjectCardProps {
-  showFeature: boolean;
-  setShowFeature: Dispatch<SetStateAction<boolean>>;
   synopsis: string;
+  title: string;
+  modalPacket: {
+    imageUrl: string;
+    imageAlt?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+    synopsis: string;
+    title: string;
+    featurePoints?: string;
+  };
   tags?: string[];
   link?: string;
-  featurePoints?: string[];
+  imageUrl: string;
+  gifUrl?: string;
+  featurePoints?: string;
 }
 
 export const ProjectCard = ({
-  showFeature,
-  setShowFeature,
   synopsis,
   tags,
+  imageUrl,
+  gifUrl,
   link,
   featurePoints,
+  modalPacket,
+  title,
 }: ProjectCardProps) => {
+  const [showModal, setShowModal] = useState(false);
+
   const handleModalOpen = () => {
-    setShowFeature(true);
+    setShowModal(true);
   };
 
   return (
     <div className="mb-3 flex flex-col items-center text-center">
       <div className="flex w-full max-w-[300px] flex-col items-stretch mr-3">
+        <h2 className="font-bold font-label text-secondary text-[20px] py-3">
+          {modalPacket.title}
+        </h2>
         <Image
-          src="/TestRide.png"
+          src={imageUrl}
           alt="Image of Test Ride testing App"
           width={300}
-          height={250}
-          className="w-full rounded-2xl border-l-[1px] border-r-[1px] border-t-[1px] border-edge-primary"
+          height={300}
+          className="w-full h-[200px] rounded-2xl border-l-[1px] border-r-[1px] border-t-[1px] border-edge-primary"
         />
         <div className="-mt-[10px] flex w-full flex-col justify-center rounded-b-2xl border-b-[1px] border-l-[1px] border-r-[1px] border-edge-primary bg-foreground p-[12px]">
           <p className="text-[15px] break-words text-secondary">
@@ -54,17 +71,16 @@ export const ProjectCard = ({
           </button>
         </div>
       </div>
-      {showFeature ? (
-        <Modal
-          Header={"Test Ride"}
-          ImageSrc={"/TestRideGIF.gif"}
-          ImageAlt={"a Gif of the Test Ride App running"}
-          showModal={showFeature}
-          setShowModal={setShowFeature}
-          synopsis={synopsis}
-          points={featurePoints}
-        />
-      ) : null}
+      <Modal
+        Header={modalPacket.title || title}
+        ImageSrc={(gifUrl ?? modalPacket.imageUrl) || imageUrl}
+        ImageAlt={`a preview of ${modalPacket.title || title}`}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        synopsis={modalPacket.synopsis || synopsis}
+        imageHeight={modalPacket.imageHeight || 300}
+        imageWidth={modalPacket.imageWidth || 300}
+      />
     </div>
   );
 };
