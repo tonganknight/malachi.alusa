@@ -1,3 +1,5 @@
+import { ContactMeEnum } from "@/app/types/ContactMeEnum";
+
 export const ContactMeForm = () => {
   return (
     <div className="w-full px-5 pb-8 flex justify-center mt-5">
@@ -5,36 +7,36 @@ export const ContactMeForm = () => {
         <div className="card-body p-5 sm:p-6">
           <form className="flex flex-col gap-4">
             <label className="font-label text-secondary text-xs font-bold uppercase tracking-[0.12em]">
-              Name
+              {ContactMeEnum.NameLabel}
             </label>
             <input
               type="text"
-              placeholder="John Doe"
+              placeholder={ContactMeEnum.NamePlaceholder}
               className="input input-bordered w-full bg-background border-edge-primary text-secondary placeholder:text-primary/45"
             />
 
             <label className="font-label text-secondary text-xs font-bold uppercase tracking-[0.12em]">
-              Email
+              {ContactMeEnum.EmailLabel}
             </label>
             <input
               type="email"
-              placeholder="john@engineer.io"
+              placeholder={ContactMeEnum.EmailPlaceholder}
               className="input input-bordered w-full bg-background border-edge-primary text-secondary placeholder:text-primary/45"
             />
 
             <label className="font-label text-secondary text-xs font-bold uppercase tracking-[0.12em]">
-              Message
+              {ContactMeEnum.MessageLabel}
             </label>
             <textarea
-              placeholder="How can we help?"
+              placeholder={ContactMeEnum.MessagePlaceholder}
               className="textarea textarea-bordered min-h-[110px] w-full resize-none bg-background border-edge-primary text-secondary placeholder:text-primary/45"
             />
 
             <button
               type="submit"
-              className="btn mt-2 w-full border-none text-[26px] font-headline normal-case text-[#411d8f] bg-[linear-gradient(90deg,#a78bfa,#22d3ee)] hover:brightness-110"
+              className="btn mt-2 w-full  font-label font-bold border-none text-[20px] font-headline normal-case text-[#411d8f] bg-[linear-gradient(90deg,#a78bfa,#22d3ee)] hover:brightness-110"
             >
-              Send Message {">"}
+              {ContactMeEnum.SendMessageButton}
             </button>
           </form>
         </div>

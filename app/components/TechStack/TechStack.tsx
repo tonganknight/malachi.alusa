@@ -12,8 +12,8 @@ export const TechStack = () => {
 
   return (
     <section id="TechStack">
-      <div className="flex flex-col m-3 justify-center items-center w-[100%]">
-        <p className="font-label text-secondary text-[20px] ml-2 mb-3">
+      <div className="flex flex-col m-3 justify-center items-center w-[100%] pb-8">
+        <p className="font-label font-bold text-secondary text-[20px] py-3 ">
           {TechStackEnum.Label}
         </p>
         <button
