@@ -2,11 +2,15 @@
 
 import { FeaturedProjectSectionEnum } from "@/app/types/FeaturedProjectSectionEnum";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-export const FeaturedProjectsSection = () => {
-  const [showFeature, setShowFeature] = useState(false);
+interface FeaturedProjectsSectionProps {
+  setShowProjects: Dispatch<SetStateAction<boolean>>;
+}
 
+export const FeaturedProjectsSection = ({
+  setShowProjects,
+}: FeaturedProjectsSectionProps) => {
   const tagsToDisplay = [
     "Next.js",
     ".Net",
@@ -21,17 +25,27 @@ export const FeaturedProjectsSection = () => {
         <p className="font-label text-secondary text-[20px] mb-5">
           {FeaturedProjectSectionEnum.Label}
         </p>
-        <a className="font-label text-highlight-primary text-[15px] mb-3 ml-3">
+        <a
+          onClick={() => setShowProjects(true)}
+          className="font-label text-highlight-primary text-[15px] mb-3 ml-3"
+        >
           {FeaturedProjectSectionEnum.ShowAllLink}
         </a>
       </div>
       <ProjectCard
-        showFeature={showFeature}
-        setShowFeature={setShowFeature}
         synopsis={FeaturedProjectSectionEnum.FeaturedProjectSynopsis}
         tags={tagsToDisplay}
         link={FeaturedProjectSectionEnum.FeaturedProjectLink}
-        featurePoints={FeaturedProjectSectionEnum.FeaturedProjectFeaturePoints}
+        // featurePoints={FeaturedProjectSectionEnum.FeaturedProjectFeaturePoints}
+        imageUrl={"/TestRide.png"}
+        gifUrl={"/TestRideGIF.gif"}
+        modalPacket={{
+          imageUrl: "/TestRideGIF.gif",
+          synopsis: FeaturedProjectSectionEnum.FeaturedProjectSynopsis,
+          title: "TestRide",
+          featurePoints: undefined,
+        }}
+        title={"TestRide"}
       />
     </div>
   );
