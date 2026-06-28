@@ -55,15 +55,16 @@ export const Home = () => {
       <LetsConnectButton />
       <SkillsOverview />
       <TechStack />
-      {showProjects && (
+      {showProjects ? (
         <AllProjects
           imagesUrls={imageUrls}
           Titles={titles}
           synopses={synopses}
           setShowProjects={setShowProjects}
         />
+      ) : (
+        <FeaturedProjectsSection setShowProjects={setShowProjects} />
       )}
-      <FeaturedProjectsSection setShowProjects={setShowProjects} />
     </div>
   );
 };
