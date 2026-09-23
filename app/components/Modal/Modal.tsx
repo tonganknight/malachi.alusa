@@ -39,7 +39,7 @@ export const Modal = ({
       onClose={handleCloseModal}
       onCancel={handleCloseModal}
     >
-      <div className="modal-box flex max-h-[85vh] flex-col items-center overflow-y-auto bg-foreground border-[1px] border-edge-primary text-secondary">
+      <div className="modal-box flex text-center max-h-[85vh] flex-col items-center overflow-y-auto bg-foreground border-[1px] border-edge-primary text-secondary">
         <button
           type="button"
           className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
@@ -49,13 +49,14 @@ export const Modal = ({
         </button>
         <h3 className="font-bold font-label text-[20px] py-3">{Header}</h3>
         <Image
+          style={{ height: imageHeight ?? 300, width: imageWidth ?? 300 }}
           src={ImageSrc}
           alt={ImageAlt}
           width={imageWidth ?? 300}
           height={imageHeight ?? 300}
           className="rounded-2xl border-[1px] border-edge-primary"
         />
-        <p className="my-3">{synopsis}</p>
+        <p className="mb-3 mt-5 w-full">{synopsis}</p>
         {points ? (
           <div className="flex flex-col justify-center items-center mt-3">
             <p className="font-bold font-label text-[25px] text-secondary">

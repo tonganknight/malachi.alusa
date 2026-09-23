@@ -2,10 +2,12 @@
 import { Dispatch, SetStateAction } from "react";
 import { ProjectCard } from "../FeaturedProjectsSection/ProjectCard/ProjectCard";
 import { AllProjectsEnum } from "@/app/types/AllProjects";
+import { ModalPacket } from "@/app/types/modalPackets";
 
 interface AllProjectsProps {
   setShowProjects: Dispatch<SetStateAction<boolean>>;
   imagesUrls: string[];
+  ModalPackets: ModalPacket[];
   gifUrls?: string[];
   Titles: string[];
   synopses: string[];
@@ -24,6 +26,7 @@ export const AllProjects = ({
   demo,
   demoUrls,
   tags,
+  ModalPackets,
   setShowProjects,
 }: AllProjectsProps) => {
   return (
@@ -48,13 +51,7 @@ export const AllProjects = ({
           imageHeight={200}
           imageWidth={300}
           tags={tags}
-          modalPacket={{
-            imageUrl: imageUrl,
-            synopsis: synopses[index],
-            title: Titles[index],
-            featurePoints: features ? features[index] : undefined,
-          }}
-          title={Titles[index]}
+          modalPacket={ModalPackets[index]}
         />
       ))}
     </div>
