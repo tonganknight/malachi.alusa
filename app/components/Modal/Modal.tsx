@@ -49,10 +49,10 @@ export const Modal = ({
         </button>
         <h3 className="font-bold font-label text-[20px] py-3">{Header}</h3>
         <Image
-          style={{ height: imageHeight ?? 300, width: imageWidth ?? 300 }}
+          style={{ height: imageHeight ?? 300, width: imageWidth ?? 375 }}
           src={ImageSrc}
           alt={ImageAlt}
-          width={imageWidth ?? 300}
+          width={imageWidth ?? 375}
           height={imageHeight ?? 300}
           className="rounded-2xl border-[1px] border-edge-primary"
         />

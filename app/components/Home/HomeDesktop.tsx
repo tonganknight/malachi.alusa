@@ -313,30 +313,45 @@ export const HomeDesktop = () => {
               </div>
 
               <div className="grid gap-4 md:grid-cols-3">
-                <div className="rounded-[1.75rem] border border-edge-primary/70 bg-foreground/80 p-5 shadow-lg backdrop-blur">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
-                    Experience
-                  </p>
-                  <p className="mt-4 font-headline text-4xl font-black text-secondary">
-                    {YearsOfExpEnum.Value}
-                  </p>
-                  <p className="mt-2 text-sm text-secondary/70">
-                    {YearsOfExpEnum.Label}
-                  </p>
-                </div>
+                <div className="space-y-4 md:col-span-2">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-[1.75rem] border border-edge-primary/70 bg-foreground/80 p-5 shadow-lg backdrop-blur">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
+                        Experience
+                      </p>
+                      <p className="mt-4 font-headline text-4xl font-black text-secondary">
+                        {YearsOfExpEnum.Value}
+                      </p>
+                      <p className="mt-2 text-sm text-secondary/70">
+                        {YearsOfExpEnum.Label}
+                      </p>
+                    </div>
 
-                <div className="rounded-[1.75rem] border border-edge-primary/70 bg-foreground/80 p-5 shadow-lg backdrop-blur">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
-                    Disciplines
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2 text-sm font-semibold text-highlight-primary">
-                    <span>{Discipline.FRONTEND}</span>
-                    <span>{Discipline.BACKEND}</span>
-                    <span>{Discipline.DATABASE}</span>
+                    <div className="rounded-[1.75rem] border border-edge-primary/70 bg-foreground/80 p-5 shadow-lg backdrop-blur">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
+                        Disciplines
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2 text-sm font-semibold text-highlight-primary">
+                        <span>{Discipline.FRONTEND}</span>
+                        <span>{Discipline.BACKEND}</span>
+                        <span>{Discipline.DATABASE}</span>
+                      </div>
+                      <p className="mt-4 text-sm text-secondary/70">
+                        Multi-discipline delivery for product, platform, and
+                        data.
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-4 text-sm text-secondary/70">
-                    Multi-discipline delivery for product, platform, and data.
-                  </p>
+
+                  <div className="rounded-[1.5rem] border border-edge-primary/70 bg-foreground/90 p-4 shadow-lg backdrop-blur">
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
+                      Delivery
+                    </p>
+                    <p className="mt-2 text-sm text-secondary/80">
+                      Responsive systems, refined motion, and production-ready
+                      UI.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="rounded-[1.75rem] border border-edge-primary/70 bg-foreground/80 p-5 shadow-lg backdrop-blur">
@@ -357,9 +372,17 @@ export const HomeDesktop = () => {
               <div className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-400/20 via-transparent to-violet-500/20 blur-3xl" />
 
               <div className="overflow-hidden rounded-[2.5rem] border border-edge-primary/70 bg-foreground/80 shadow-[0_30px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
-                <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => openProjectModal(1)}
+                  className="relative block w-full text-left"
+                >
                   <Image
-                    src="/TestRideGIF.gif"
+                    src={
+                      showProjectModal && activeProjectIndex === 1
+                        ? "/TestRideGIF.gif"
+                        : "/TestRide.png"
+                    }
                     alt="TestRide preview"
                     width={1200}
                     height={900}
@@ -391,7 +414,7 @@ export const HomeDesktop = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </button>
 
                 <div className="grid gap-px bg-edge-primary/70 md:grid-cols-2">
                   <div className="bg-background/80 p-5">
@@ -412,15 +435,6 @@ export const HomeDesktop = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="absolute -left-6 bottom-8 hidden rounded-[1.5rem] border border-edge-primary/70 bg-foreground/90 p-4 shadow-2xl backdrop-blur xl:block">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-highlight-primary/80">
-                  Delivery
-                </p>
-                <p className="mt-2 text-sm text-secondary/80">
-                  Responsive systems, refined motion, and production-ready UI.
-                </p>
-              </div>
             </div>
           </section>
 
@@ -434,11 +448,6 @@ export const HomeDesktop = () => {
                   Tech Stack
                 </h2>
               </div>
-              <p className="max-w-2xl text-sm leading-7 text-secondary/70">
-                Desktop presentation with the same assets, but expanded into a
-                more editorial layout that gives each stack item room to
-                breathe.
-              </p>
             </div>
 
             <div className="grid gap-5 xl:grid-cols-3">
@@ -570,7 +579,11 @@ export const HomeDesktop = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-400/25 via-fuchsia-400/10 to-transparent opacity-90 transition group-hover:opacity-100" />
                     <Image
-                      src={projectCards[1].gifUrl}
+                      src={
+                        showProjectModal && activeProjectIndex === 1
+                          ? projectCards[1].gifUrl
+                          : projectCards[1].imageUrl
+                      }
                       alt={projectCards[1].title}
                       width={1200}
                       height={760}
