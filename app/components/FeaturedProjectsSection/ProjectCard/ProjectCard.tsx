@@ -1,20 +1,12 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "../../Modal/Modal";
 import { Tag } from "../../Tags/tags";
+import { ModalPacket } from "@/app/types/modalPackets";
 
 interface ProjectCardProps {
   synopsis: string;
-  title: string;
-  modalPacket: {
-    imageUrl: string;
-    imageAlt?: string;
-    imageWidth?: number;
-    imageHeight?: number;
-    synopsis: string;
-    title: string;
-    featurePoints?: string;
-  };
+  modalPacket: ModalPacket;
   tags?: string[];
   link?: string;
   imageUrl: string;
@@ -32,7 +24,6 @@ export const ProjectCard = ({
   link,
   featurePoints,
   modalPacket,
-  title,
   imageHeight,
   imageWidth,
 }: ProjectCardProps) => {
@@ -42,6 +33,11 @@ export const ProjectCard = ({
     setShowModal(true);
   };
 
+  useEffect(() => {
+    console.log("imageHeight", imageHeight);
+    console.log("modalPacket.imageHeight ", modalPacket.imageHeight);
+  }, [showModal]);
+
   return (
     <div className="mb-3 flex flex-col items-center text-center">
       <div className="flex w-full max-w-[300px] flex-col items-stretch mr-3">
@@ -49,7 +45,7 @@ export const ProjectCard = ({
           {modalPacket.title}
         </h2>
         <Image
-          style={{ height: imageHeight ?? 400 }}
+          style={{ height: imageHeight ?? 300 }}
           src={imageUrl}
           alt="Image of Test Ride testing App"
           width={imageWidth ?? 300}
@@ -77,14 +73,13 @@ export const ProjectCard = ({
         </div>
       </div>
       <Modal
-        Header={modalPacket.title || title}
-        ImageSrc={(gifUrl ?? modalPacket.imageUrl) || imageUrl}
-        ImageAlt={`a preview of ${modalPacket.title || title}`}
+        Header={modalPacket.title || ""}
+        ImageSrc={modalPacket.imageUrl}
+        ImageAlt={`a preview of ${modalPacket.title || ""}`}
         showModal={showModal}
         setShowModal={setShowModal}
         synopsis={modalPacket.synopsis || synopsis}
         imageHeight={modalPacket.imageHeight || 300}
-        imageWidth={modalPacket.imageWidth || 300}
       />
     </div>
   );

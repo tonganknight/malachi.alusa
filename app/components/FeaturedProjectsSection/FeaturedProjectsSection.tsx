@@ -46,7 +46,6 @@ export const FeaturedProjectsSection = ({
           title: "TestRide",
           featurePoints: undefined,
         }}
-        title={"TestRide"}
       />
     </div>
   );
