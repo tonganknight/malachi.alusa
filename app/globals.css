@@ -39,10 +39,16 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
   min-height: 100vh;
+}
+
+section[id],
+[id] {
+  scroll-margin-top: 6rem;
 }
 
 .mobile-home {

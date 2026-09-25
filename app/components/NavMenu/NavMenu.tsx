@@ -49,6 +49,21 @@ export const NavMenu = () => {
       {open && (
         <ul className="menu menu-sm fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 rounded-box z-50 w-52 p-2 shadow bg-foreground border-1 border-edge-primary">
           <li>
+            <a href="#mobile-about" onClick={onLinkClick}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#mobile-tech" onClick={onLinkClick}>
+              Tech Stack
+            </a>
+          </li>
+          <li>
+            <a href="#mobile-projects" onClick={onLinkClick}>
+              Projects
+            </a>
+          </li>
+          <li>
             <a
               onClick={() => {
                 onLinkClick();
@@ -58,14 +73,6 @@ export const NavMenu = () => {
             >
               Contact Me
             </a>
-          </li>
-          <li>
-            <a href="#TechStack" onClick={onLinkClick}>
-              Tech Stack
-            </a>
-          </li>
-          <li>
-            <a onClick={onLinkClick}>Projects</a>
           </li>
         </ul>
       )}
