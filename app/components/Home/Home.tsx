@@ -77,7 +77,7 @@ export const Home = () => {
       featurePoints: ["TypeScript", "React", "Bootstrap", "Node.js"],
     },
     {
-      imageUrl: "/GitItDone.png",
+      imageUrl: "/GitItDoneGIF.gif",
       imageHeight: 400,
       imageAlt: "Image of the Git It Done website",
       synopsis:

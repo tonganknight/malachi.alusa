@@ -150,14 +150,14 @@ const projectCards: ProjectCardData[] = [
   {
     title: "Git It Done",
     imageUrl: "/GitItDone.png",
-    gifUrl: "/GitItDone.png",
+    gifUrl: "/GitItDoneGIF.gif",
     synopsis:
       "A focused repository explorer that helps developers jump into active GitHub issues.",
     tags: ["JavaScript", "GitHub API", "Bootstrap"],
     eyebrow: "Open-source discovery",
     accent: "from-sky-400/20 via-blue-400/10 to-transparent",
     modalPacket: {
-      imageUrl: "/GitItDone.png",
+      imageUrl: "/GitItDoneGIF.gif",
       imageHeight: 400,
       imageAlt: "Image of the Git It Done website",
       synopsis:
@@ -243,19 +243,19 @@ export const HomeDesktop = () => {
 
             <nav className="hidden items-center gap-6 lg:flex">
               <a
-                href="#about"
+                href="#desktop-about"
                 className="text-sm font-medium text-secondary/75 transition hover:text-highlight-primary"
               >
                 About
               </a>
               <a
-                href="#tech"
+                href="#desktop-tech"
                 className="text-sm font-medium text-secondary/75 transition hover:text-highlight-primary"
               >
                 Tech Stack
               </a>
               <a
-                href="#projects"
+                href="#desktop-projects"
                 className="text-sm font-medium text-secondary/75 transition hover:text-highlight-primary"
               >
                 Projects
@@ -274,7 +274,7 @@ export const HomeDesktop = () => {
 
         <main className="flex flex-1 flex-col gap-20 pb-10">
           <section
-            id="about"
+            id="desktop-about"
             className="grid items-center gap-12 xl:grid-cols-[1.05fr_0.95fr]"
           >
             <div className="space-y-8">
@@ -305,7 +305,7 @@ export const HomeDesktop = () => {
                   Let&apos;s Connect
                 </button>
                 <a
-                  href="#projects"
+                  href="#desktop-projects"
                   className="rounded-full border border-edge-primary bg-foreground/75 px-7 py-4 text-sm font-semibold text-secondary transition hover:border-highlight-primary hover:text-highlight-primary"
                 >
                   Explore Projects
@@ -438,7 +438,7 @@ export const HomeDesktop = () => {
             </div>
           </section>
 
-          <section id="tech" className="space-y-8">
+          <section id="desktop-tech" className="space-y-8">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-highlight-primary/80">
@@ -495,7 +495,7 @@ export const HomeDesktop = () => {
             </div>
           </section>
 
-          <section id="projects" className="space-y-8 pb-8">
+          <section id="desktop-projects" className="space-y-8 pb-8">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-highlight-primary/80">
